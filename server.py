@@ -10,7 +10,7 @@ HTML_PAGE = """
 </head>
 <body>
     <h2>Welcome to the Challenge!</h2>
-    <form action="/flag" method="POST">
+    <form action="/flag" method="GET">
         <button type="submit">FLAG</button>
     </form>
 </body>
@@ -23,9 +23,9 @@ def home():
 
 @app.route("/flag", methods=["POST", "GET"])
 def flag():
-    if request.method == "GET":
-        return "Congratulations! You GET the flag: HTTP_GET_the_flAg"
-    return "You want to get the flag? HeHe"
+    if request.method == "POST":
+        return "Nothing comes to you if you just wait to GET something. Congratulations! You POSTed for the flag: HTTP_POST_the_flAg"
+    return "You want to get the flag? Try some!"
 
 if __name__ == "__main__":
     app.run(debug=True, port=5000)
