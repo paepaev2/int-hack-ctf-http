@@ -27,5 +27,13 @@ def flag():
         return "Nothing comes to you if you just wait to GET something. Congratulations! You POSTed for the flag: HTTP_POST_the_flAg"
     return "You want to get the flag? Try some!"
 
+@app.route("/some", methods=["GET"])
+def some():
+    return "Too straightforward!"
+
+@app.route("/flag/some", methods=["GET"])
+def flagsome():
+    return "Too straightforward!"
+
 if __name__ == "__main__":
     app.run(debug=True, port=5000)
